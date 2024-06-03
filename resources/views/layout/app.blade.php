@@ -62,6 +62,19 @@
         </header>
         <!--...::: Header End :::... -->
 
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZGM3L63YD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-LZGM3L63YD');
+        </script>
+
         <main class="main-wrapper relative overflow-hidden">
             {{ $slot }}
         </main>

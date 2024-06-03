@@ -40,6 +40,7 @@ class PageResource extends Resource
     protected static ?string $slug = 'halaman';
     protected static ?string $label = 'Halaman';
     protected static ?int $navigationSort = 2;
+    protected static ?string $navigationGroup = 'Konten';
 
     public static function form(Form $form): Form
     {
@@ -104,7 +105,8 @@ class PageResource extends Resource
                     // ->lineClamp(2)
                     ->words(20)
                     ->getStateUsing(function (Page $record): string {
-                        return preg_replace('/<figure(.*)<\/figure>/iUs', '', $record->content);
+                        // return preg_replace('/<img(.*)<\/img>/iUs', '', preg_replace('/<figure(.*)<\/figure>/iUs', '', $record->content));
+                        return preg_replace('/<img[^>]+\>/i', '', $record->content);
                     }),
                 CheckboxColumn::make('is_published'),
                 // IconColumn::make('is_menu')->boolean(),

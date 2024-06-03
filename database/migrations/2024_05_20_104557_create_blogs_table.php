@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('blog_category_id')->nullable();
             $table->string('title');
             $table->string('slug');
             $table->boolean('is_slug_changed_manually')->default(false);

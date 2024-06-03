@@ -31,10 +31,11 @@ use Illuminate\Support\Facades\Auth;
 class HomeResource extends Resource
 {
     protected static ?string $model = Home::class;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-computer-desktop';
     protected static ?string $slug = 'beranda';
     protected static ?string $label = 'Beranda';
     protected static ?int $navigationSort = 1;
+    protected static ?string $navigationGroup = 'Konten';
 
     public static function form(Form $form): Form
     {

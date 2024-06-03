@@ -2,29 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use SolutionForest\FilamentTree\Concern\ModelTree;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Menu extends Model
+class ProductCategory extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use ModelTree;
 
-    protected $fillable = ['title', 'type', 'url', 'page_id', 'parent_id', 'is_blank', 'user_id'];
+    protected $fillable = ['title', 'order', 'parent_id', 'user_id'];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function page(): BelongsTo
-    {
-        return $this->belongsTo(Page::class);
     }
 
     public function parent(): BelongsTo

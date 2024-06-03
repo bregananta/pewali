@@ -14,13 +14,12 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('type')->default('group');
+            $table->string('title');
+            $table->integer('order')->default(0)->index();
+            $table->integer('parent_id')->default(-1);
             $table->string('url')->nullable();
             $table->foreignId('page_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignId('parent_id')->nullable()->constrained(
-                table: 'menus',
-                indexName: 'id'
-            )->cascadeOnDelete();
             $table->boolean('is_blank')->default(false);
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->softDeletes();
