@@ -41,7 +41,9 @@ class MenuResource extends Resource
                         'url' => 'Tautan Eksternal',
                         'page' => 'Halaman Internal',
                         'product' => 'Produk',
-                        'blog' => 'Blog'
+                        'blog' => 'Blog',
+                        'client' => 'Klien',
+                        'faq' => 'F.A.Q'
                     ])
                     ->required()
                     ->native(false)

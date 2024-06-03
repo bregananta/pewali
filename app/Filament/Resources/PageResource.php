@@ -97,7 +97,7 @@ class PageResource extends Resource
             ->columns([
                 TextColumn::make('title')
                     ->wrap()
-                    ->description(fn (Page $record): string => $record->slug)
+                    ->description(fn (Page $record): string => strip_tags($record->slug))
                     ->lineClamp(2),
                 TextColumn::make('content')
                     ->html()

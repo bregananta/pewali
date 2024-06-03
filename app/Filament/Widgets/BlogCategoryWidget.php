@@ -14,12 +14,10 @@ use SolutionForest\FilamentTree\Widgets\Tree as BaseWidget;
 class BlogCategoryWidget extends BaseWidget
 {
     protected static string $model = BlogCategory::class;
-
     protected static int $maxDepth = 2;
-
-    protected ?string $treeTitle = 'BlogCategoryWidget';
-
+    protected ?string $treeTitle = 'Struktur Kategori';
     protected bool $enableTreeTitle = true;
+    protected static bool $isDiscovered = false;
 
     protected function getFormSchema(): array
     {
@@ -29,7 +27,8 @@ class BlogCategoryWidget extends BaseWidget
     }
 
     // INFOLIST, CAN DELETE
-    public function getViewFormSchema(): array {
+    public function getViewFormSchema(): array
+    {
         return [
             //
         ];
