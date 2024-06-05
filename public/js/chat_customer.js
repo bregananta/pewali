@@ -1,8 +1,8 @@
 Pusher.logToConsole = true;
-const pusher = new Pusher("qwerty12345", {
+const pusher = new Pusher("732188", {
     wsHost: "127.0.0.1",
-    wsPort: 6001,
-    wssPort: 6001,
+    wsPort: 8080,
+    wssPort: 8080,
     disableStats: true,
     enabledTransports: ["ws", "wss"],
     cluster: "mt1",
@@ -14,7 +14,7 @@ $("#messageForm").on("submit", function (e) {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
         },
         type: "POST",
-        url: "/chattle/post-message",
+        url: "/chat/post-message",
         data: {
             message: $("#message").val(),
             chat_id: $.cookie("ch"),
@@ -59,7 +59,7 @@ $(document).ready(function () {
                             ),
                         },
                         type: "POST",
-                        url: "/chattle/create-chat",
+                        url: "/chat/create-chat",
                         data: {
                             name: $("#name").val(),
                             email: $("#email").val(),
@@ -124,7 +124,7 @@ $(document).ready(function () {
                 "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
             },
             type: "GET",
-            url: "/chattle/get-messages",
+            url: "/chat/get-messages",
             data: {
                 chat_id: $.cookie("ch"),
             },

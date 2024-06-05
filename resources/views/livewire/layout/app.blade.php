@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    {{-- @include('chat') --}}
     <div class="page-wrapper relative z-[1] bg-white">
         <!--...::: Header Start :::... -->
         <header class="site-header site-header--absolute is--white py-3" id="sticky-menu">

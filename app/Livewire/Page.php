@@ -10,7 +10,7 @@ use Livewire\Component;
 
 use function PHPUnit\Framework\isEmpty;
 
-#[Layout('layout.app')]
+#[Layout('livewire.layout.app')]
 #[Title('CV PEWALI - Jumbo Bag (FIBC) Supplier')]
 
 class Page extends Component

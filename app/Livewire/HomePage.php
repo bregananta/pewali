@@ -6,7 +6,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Layout('layout.app')]
+#[Layout('livewire.layout.app')]
 #[Title('CV PEWALI - Jumbo Bag (FIBC) Supplier')]
 
 class HomePage extends Component

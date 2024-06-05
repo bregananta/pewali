@@ -10,6 +10,7 @@
         "filament/filament": "^3.2",
         "filament/spatie-laravel-media-library-plugin": "^3.2",
         "laravel/framework": "^11.0",
+        "laravel/reverb": "@beta",
         "laravel/tinker": "^2.9",
         "solution-forest/filament-tree": "^2.0"
     },

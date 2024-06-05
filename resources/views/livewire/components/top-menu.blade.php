@@ -29,12 +29,28 @@
                             @endif
                         </a>
                     @else
-                        <a href="#"
-                            class="nav-link-item {{ $menu->children->count() > 0 ? 'drop-trigger' : '' }}">{{ $menu->title }}
-                            @if ($menu->children->count() > 0)
-                                <i class="fa-solid fa-angle-down"></i>
-                            @endif
-                        </a>
+                        @if ($menu->type === 'product')
+                            <a href="/produk"
+                                class="nav-link-item {{ $menu->children->count() > 0 ? 'drop-trigger' : '' }}">{{ $menu->title }}
+                                @if ($menu->children->count() > 0)
+                                    <i class="fa-solid fa-angle-down"></i>
+                                @endif
+                            </a>
+                        @elseif ($menu->type === 'blog')
+                            <a href="/blog"
+                                class="nav-link-item {{ $menu->children->count() > 0 ? 'drop-trigger' : '' }}">{{ $menu->title }}
+                                @if ($menu->children->count() > 0)
+                                    <i class="fa-solid fa-angle-down"></i>
+                                @endif
+                            </a>
+                        @else
+                            <a href="#"
+                                class="nav-link-item {{ $menu->children->count() > 0 ? 'drop-trigger' : '' }}">{{ $menu->title }}
+                                @if ($menu->children->count() > 0)
+                                    <i class="fa-solid fa-angle-down"></i>
+                                @endif
+                            </a>
+                        @endif
                     @endif
 
 
