@@ -15,7 +15,7 @@ class ProductCategoryWidget extends BaseWidget
 {
     protected static string $model = ProductCategory::class;
     protected static int $maxDepth = 2;
-    protected ?string $treeTitle = 'Struktur Kategori';
+    protected ?string $treeTitle = 'ProductCategoryWidget';
     protected bool $enableTreeTitle = true;
     protected static bool $isDiscovered = false;
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Chat\CreateController;
 use App\Http\Controllers\Chat\GetChatsController;
 use App\Http\Controllers\Chat\GetMessagesController;
 use App\Http\Controllers\Chat\PostMessageController;
+use App\Livewire\Blog;
 use App\Livewire\HomePage;
 use App\Livewire\Page;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomePage::class);
 
 Route::get('/page/{slug}', Page::class);
+Route::get('/blog/{slug}', Blog::class);
 
 Route::prefix('chat')->group(function () {
     Route::view('chat', 'chat::chat');

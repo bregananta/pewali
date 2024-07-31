@@ -15,7 +15,7 @@ class BlogCategoryWidget extends BaseWidget
 {
     protected static string $model = BlogCategory::class;
     protected static int $maxDepth = 2;
-    protected ?string $treeTitle = 'Struktur Kategori';
+    protected ?string $treeTitle = 'BlogCategoryWidget';
     protected bool $enableTreeTitle = true;
     protected static bool $isDiscovered = false;
 

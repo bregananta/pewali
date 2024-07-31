@@ -10,7 +10,7 @@ use Livewire\Component;
 
 use function PHPUnit\Framework\isEmpty;
 
-#[Layout('layout.app')]
+#[Layout('livewire.layout.app')]
 #[Title('CV PEWALI - Jumbo Bag (FIBC) Supplier')]
 
 class Page extends Component
@@ -26,16 +26,19 @@ class Page extends Component
     public function render()
     {
         // dd($this->page->id);
-        $is_product_knowledge = !is_null(Home::where('type', 'product_knowledge')
+        $home = Home::where('type', 'product_knowledge')
             ->where('page_id', $this->page->id)
-            ->get());
+            ->get();
+
+        $is_product_knowledge = !$home->isEmpty();
+        $product_knowledge = null;
 
         if ($is_product_knowledge) {
             $product_knowledge = ModelsPage::whereIn('id', Home::where('type', 'product_knowledge')->get('page_id'))
                 ->get();
         }
 
-        // dd($product_knowledge);
+        // dd($is_product_knowledge);
 
         return view('livewire.page', [
             'is_product_knowledge' => $is_product_knowledge,

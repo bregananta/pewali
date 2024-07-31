@@ -6,7 +6,7 @@
             <!-- Section Container -->
             <div class="container-default">
                 <div class="breadcrumb-block">
-                    <h1 class="breadcrumb-title mt-16">{{ $page->title ?? '' }}</h1>
+                    <h1 class="breadcrumb-title mt-16">{{ $blog->title ?? '' }}</h1>
                     {{-- <ul class="breadcrumb-nav">
                         <li><a href='index.html'>Home</a></li>
                         <li>Pages</li>
@@ -43,7 +43,7 @@
                         <div class="flex flex-col gap-6">
                             <!-- Blog Post Article -->
                             <article class="jos overflow-hidden bg-white">
-                                {!! $page->content ?? 'nothing to show' !!}
+                                {!! $blog->content ?? 'nothing to show' !!}
                             </article>
                             <!-- Blog Post Article -->
 
@@ -75,31 +75,14 @@
                         </div>
                         <!-- Single Sidebar -->
                         <!-- Single Sidebar -->
-                        @if ($is_product_knowledge)
-                            <div class="rounded-[10px] bg-ColorOffWhite p-8">
-                                <div
-                                    class="relative mb-[30px] inline-block pb-[10px] text-lg font-semibold text-ColorBlack after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-black">
-                                    Halaman Terkait
-                                </div>
-                                <!-- Blog Categories List -->
-                                <ul class="text-ColorBlack">
-                                    @foreach ($product_knowledge as $item)
-                                        @if ($item->id === $page->id)
-                                            <li
-                                                class="border-b border-ColorBlack/10 pb-[14px] pt-[14px] first:pt-0 last:border-b-0 last:pb-0 text-ColorBlue">
-                                                {{ $item->title ?? '' }}</li>
-                                        @else
-                                            <li
-                                                class="border-b border-ColorBlack/10 pb-[14px] pt-[14px] first:pt-0 last:border-b-0 last:pb-0">
-                                                <a class='hover:text-ColorBlue'
-                                                    href='/page/{{ $item->slug }}'>{{ $item->title ?? '' }}</a>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ul>
-                                <!-- Blog Categories List -->
+                        <div class="rounded-[10px] bg-ColorOffWhite p-8">
+                            <div
+                                class="relative mb-[30px] inline-block pb-[10px] text-lg font-semibold text-ColorBlack after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-black">
+                                Halaman Terkait
                             </div>
-                        @endif
+                            <!-- Blog Categories List -->
+                            <!-- Blog Categories List -->
+                        </div>
                         <!-- Single Sidebar -->
                         <!-- Single Sidebar -->
                         <div class="rounded-[10px] bg-ColorOffWhite p-8">
@@ -108,6 +91,7 @@
                                 Recent Posts
                             </div>
 
+                            <!-- Blog Recent Post List -->
                             <ul class="flex flex-col gap-y-6">
                                 <li class="group flex flex-col items-center gap-x-4 gap-y-4 sm:flex-row">
                                     <a class='inline-block h-[100px] w-full overflow-hidden rounded-[5px] sm:w-[150px]'
@@ -164,12 +148,12 @@
                                     </div>
                                 </li>
                             </ul>
-
+                            <!-- Blog Recent Post List -->
                         </div>
                         <!-- Single Sidebar -->
 
                         <!-- Single Sidebar -->
-                        {{-- <div class="rounded-[10px] bg-ColorOffWhite p-8">
+                        <div class="rounded-[10px] bg-ColorOffWhite p-8">
                             <div
                                 class="relative mb-[30px] inline-block pb-[10px] text-lg font-semibold text-ColorBlack after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-black">
                                 Subscribe
@@ -189,7 +173,7 @@
                                     Subscribe Now
                                 </button>
                             </form>
-                        </div> --}}
+                        </div>
                         <!-- Single Sidebar -->
                     </aside>
                     <!-- Blog Aside -->
