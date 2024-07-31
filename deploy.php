@@ -40,7 +40,7 @@ host('Production_Server')
     ->set('remote_user', 'bregananta')
     ->set('port', 7822)
     ->set('branch', 'main')
-    ->set('deploy_path', '/var/www/pewali-new');
+    ->set('deploy_path', '/var/www/pewali');
 
 task('deploy:secrets', function () {
     file_put_contents(__DIR__ . '/.env', getenv('DOT_ENV'));
