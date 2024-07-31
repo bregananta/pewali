@@ -4,15 +4,17 @@ namespace Deployer;
 
 require 'recipe/laravel.php';
 require 'contrib/npm.php';
+require 'contrib/rsync.php';
 
 set('bin/php', function () {
     return '/usr/bin/php';
 });
 
 set('application', 'Pewali.com');
-set('repository', 'https://git@github.com/bregananta/pewali.git');
+set('repository', 'git@github.com:bregananta/pewali.git');
 
 set('git_tty', true);
+set('ssh_multiplexing', true);
 set('git_ssh_command', 'ssh -o StrictHostKeyChecking=no');
 
 set('keep_releases', 5);
