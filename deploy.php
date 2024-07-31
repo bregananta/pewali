@@ -11,7 +11,7 @@ set('bin/php', function () {
 });
 
 set('application', 'Pewali.com');
-set('repository', 'https://bregananta@github.com/bregananta/pewali.git');
+set('repository', 'git@github.com:bregananta/pewali.git');
 
 set('git_tty', true);
 set('ssh_multiplexing', true);
