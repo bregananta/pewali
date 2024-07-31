@@ -102,7 +102,7 @@
                         @endif
                         <!-- Single Sidebar -->
                         <!-- Single Sidebar -->
-                        <div class="rounded-[10px] bg-ColorOffWhite p-8">
+                        {{-- <div class="rounded-[10px] bg-ColorOffWhite p-8">
                             <div
                                 class="relative mb-[30px] inline-block pb-[10px] text-lg font-semibold text-ColorBlack after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-black">
                                 Recent Posts
@@ -165,7 +165,7 @@
                                 </li>
                             </ul>
 
-                        </div>
+                        </div> --}}
                         <!-- Single Sidebar -->
 
                         <!-- Single Sidebar -->
