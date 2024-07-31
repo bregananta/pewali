@@ -19,7 +19,7 @@ jobs:
         with:
           name: assets
           path: public
-          retention-days: 3
+          # retention-days: 3
   deploy-production:
     name: Deploy Project to Production Server
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
           name: assets
           path: public
       - name: Setup PHP
-        uses: shivammathur/setup-php@main
+        uses: shivammathur/setup-php@master
         with:
           php-version: "8.2"
           extension-csv: mbstring, bcmath
