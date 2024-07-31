@@ -39,7 +39,7 @@
             <div class="container-default">
                 <div class="flex items-center justify-between gap-x-8">
                     <!-- Header Logo -->
-                    <a class="logo" href="index.html">
+                    <a class="logo" href="/">
                         <img src="{{ asset('assets/img/pewali.svg') }}" alt="Pewali" width="120" />
                     </a>
                     <!-- Header Logo -->
@@ -179,7 +179,7 @@
                                     <ul class="flex flex-col gap-y-[10px] capitalize">
                                         <li>
                                             <a class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                href="index.html">Home</a>
+                                                href="/">Home</a>
                                         </li>
                                         <li>
                                             <a class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
