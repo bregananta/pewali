@@ -132,7 +132,7 @@
                                 <!-- Footer Widget Item -->
                                 <div class="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
                                     <!-- Footer Logo -->
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img class="logo" src="{{ asset('assets/img/pewali.svg') }}"
                                             alt="PEWALI" />
                                     </a>
