@@ -10,7 +10,7 @@ set('bin/php', function () {
 });
 
 set('application', 'Pewali.com');
-set('repository', 'https://bregananta@github.com/bregananta/pewali.git');
+set('repository', 'https://git@github.com/bregananta/pewali.git');
 
 set('git_tty', true);
 set('git_ssh_command', 'ssh -o StrictHostKeyChecking=no');
