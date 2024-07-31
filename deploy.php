@@ -18,7 +18,7 @@ set('ssh_multiplexing', true);
 set('git_ssh_command', 'ssh -o StrictHostKeyChecking=no');
 
 set('keep_releases', 5);
-set('forward_agent', false);
+// set('forward_agent', false);
 
 // set('writable_mode', 'chmod'); // shared hosting
 
