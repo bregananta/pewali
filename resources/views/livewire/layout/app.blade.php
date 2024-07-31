@@ -140,8 +140,7 @@
                                     <div>
                                         <!-- Footer About Text -->
                                         <div class="lg:max-w-[416px]">
-                                            Curabitur sit amet vulputate felis. Ut convallis gravida
-                                            pellentesque. Nullam sagittis orci sed placerat euismod.
+                                            Dari bekasi, berkarya untuk Indonesia, sejak tahun 2015.
                                         </div>
                                         <!-- Footer Mail -->
                                         <a href="mailto:hello@pewali.com"
