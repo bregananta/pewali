@@ -16,8 +16,9 @@ set('git_tty', true);
 set('git_ssh_command', 'ssh -o StrictHostKeyChecking=no');
 
 set('keep_releases', 5);
+set('forward_agent', false);
 
-set('writable_mode', 'chmod'); // shared hosting
+// set('writable_mode', 'chmod'); // shared hosting
 
 add('shared_files', ['.env']);
 add('shared_dirs', ['storage']);
