@@ -12,7 +12,7 @@
         <ul class="site-menu-main">
             @foreach ($menus as $menu)
                 <li class="nav-item {{ $menu->children->count() > 0 ? 'nav-item-has-children' : '' }}">
-                    @if (!empty($menu->page_id) && empty($menu->url))
+                    @if (!empty($menu->page_id))
                         <a href="/page/{{ $menu->page->slug }}"
                             class="nav-link-item {{ $menu->children->count() > 0 ? 'drop-trigger' : '' }}"
                             @if ($menu->is_blank) target="_blank" @endif>{{ $menu->title }}
@@ -20,7 +20,7 @@
                                 <i class="fa-solid fa-angle-down"></i>
                             @endif
                         </a>
-                    @elseif (!empty($menu->url) && empty($menu->page_id))
+                    @elseif (!empty($menu->url))
                         <a href="{{ $menu->url }}"
                             class="nav-link-item {{ $menu->children->count() > 0 ? 'drop-trigger' : '' }}"
                             @if ($menu->is_blank) target="_blank" @endif>{{ $menu->title }}
