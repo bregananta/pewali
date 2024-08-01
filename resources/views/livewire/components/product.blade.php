@@ -26,15 +26,18 @@
                         <div class="group">
                             <div
                                 class="overflow-hidden group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
-                                <img src="assets/img/th-1/bag-1.png" alt="portfolio-img-1" width="617" height="450"
+                                <img src="assets/img/bag-sling.png" alt="portfolio-img-1" height="350"
                                     class="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105" />
                             </div>
                             <div class="mt-6">
                                 <div
                                     class="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
                                     <a class="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorBlue xl:text-2xl"
-                                        href="#">PP Jumbo Bag</a>
+                                        href="#">Sling Bag</a>
+
                                 </div>
+                                <p>90x90x130/ 2000kg, 50cm high/ duffle top-close bottom. inner liner 200x298x70um
+                                </p>
                                 <a class="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue"
                                     href="#">Lihat
                                     <span class="inline-block transition-all duration-150 group-hover:translate-x-2"><i
@@ -48,15 +51,16 @@
                         <div class="group">
                             <div
                                 class="overflow-hidden group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
-                                <img src="assets/img/th-1/bag-2.png" alt="portfolio-img-2" width="617" height="450"
+                                <img src="assets/img/bag-spout-bawah.png" alt="portfolio-img-2" height="350"
                                     class="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105" />
                             </div>
                             <div class="mt-6">
                                 <div
                                     class="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
                                     <a class="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorBlue xl:text-2xl"
-                                        href="#">Ventilated Jumbo Bag</a>
+                                        href="#">Bottom Spout Bag</a>
                                 </div>
+                                <p>90x100x110/ white/ spout bawah/ 1 ton</p>
                                 <a class="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue"
                                     href="#">Lihat
                                     <span class="inline-block transition-all duration-150 group-hover:translate-x-2"><i
