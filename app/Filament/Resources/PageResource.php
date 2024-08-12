@@ -54,6 +54,7 @@ class PageResource extends Resource
                     })
                     ->reactive()
                     ->required()
+                    ->live(onBlur: true)
                     ->columnSpan(2),
                 Hidden::make('is_slug_changed_manually')
                     ->default(false)
@@ -87,7 +88,7 @@ class PageResource extends Resource
                 //     ->required(fn (Get $get) => $get('is_menu'))
                 //     ->columnSpan(1),
                 Checkbox::make('is_published')->label('Dipublikasikan')->columnSpan(3),
-                Hidden::make('user_id')->dehydrateStateUsing(fn ($state) => Auth::id())
+                Hidden::make('user_id')->dehydrateStateUsing(fn($state) => Auth::id())
             ])->columns(3);
     }
 
@@ -97,7 +98,7 @@ class PageResource extends Resource
             ->columns([
                 TextColumn::make('title')
                     ->wrap()
-                    ->description(fn (Page $record): string => strip_tags($record->slug))
+                    ->description(fn(Page $record): string => strip_tags($record->slug))
                     ->lineClamp(2),
                 TextColumn::make('content')
                     ->html()

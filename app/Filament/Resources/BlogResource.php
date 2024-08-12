@@ -47,6 +47,7 @@ class BlogResource extends Resource
                     })
                     ->reactive()
                     ->required()
+                    ->live(onBlur: true)
                     ->columnSpan(2),
                 Hidden::make('is_slug_changed_manually')
                     ->default(false)
@@ -72,7 +73,7 @@ class BlogResource extends Resource
                     ->responsiveImages()
                     ->label('Gambar')
                     ->columnSpan(3),
-                Hidden::make('user_id')->dehydrateStateUsing(fn ($state) => Auth::id())
+                Hidden::make('user_id')->dehydrateStateUsing(fn($state) => Auth::id())
 
             ])->columns(3);
     }
@@ -84,7 +85,7 @@ class BlogResource extends Resource
                 TextColumn::make('title')
                     ->label('Judul')
                     ->wrap()
-                    ->description(fn (Blog $record): string => $record->slug)
+                    ->description(fn(Blog $record): string => $record->slug)
                     ->lineClamp(2),
                 SpatieMediaLibraryImageColumn::make('Gambar'),
                 // TextColumn::make('content')->label('Konten')->html()->wrap()->lineClamp(2),
