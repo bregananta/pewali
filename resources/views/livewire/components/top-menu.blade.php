@@ -30,18 +30,10 @@
                         </a>
                     @else
                         @if ($menu->type === 'product')
-                            <a href="/produk"
-                                class="nav-link-item {{ $menu->children->count() > 0 ? 'drop-trigger' : '' }}">{{ $menu->title }}
-                                @if ($menu->children->count() > 0)
-                                    <i class="fa-solid fa-angle-down"></i>
-                                @endif
+                            <a href="/products" class="nav-link-item">{{ $menu->title }}
                             </a>
                         @elseif ($menu->type === 'blog')
-                            <a href="/blog"
-                                class="nav-link-item {{ $menu->children->count() > 0 ? 'drop-trigger' : '' }}">{{ $menu->title }}
-                                @if ($menu->children->count() > 0)
-                                    <i class="fa-solid fa-angle-down"></i>
-                                @endif
+                            <a href="/blog" class="nav-link-item">{{ $menu->title }}
                             </a>
                         @else
                             <a href="#"
@@ -53,8 +45,6 @@
                         @endif
                     @endif
 
-
-
                     @if ($menu->children->count() > 0)
                         <ul class="sub-menu">
                             @foreach ($menu->childrenRecursive as $child)
@@ -62,6 +52,8 @@
                             @endforeach
                         </ul>
                     @endif
+
+
                 </li>
             @endforeach
             {{-- <li class="nav-item">

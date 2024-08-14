@@ -66,7 +66,7 @@ class HomeResource extends Resource
                     ->multiple()
                     ->responsiveImages()
                     ->label('Gambar')
-                    ->hidden(fn (Get $get) => $get('type') === 'product_knowledge')
+                    ->hidden(fn(Get $get) => $get('type') === 'product_knowledge')
                     ->columnSpan(3),
                 SpatieMediaLibraryFileUpload::make('image_2')
                     ->collection('hover-icon')
@@ -74,9 +74,9 @@ class HomeResource extends Resource
                     ->multiple()
                     ->responsiveImages()
                     ->label('Gambar (2)')
-                    ->hidden(fn (Get $get) => $get('type') !== 'product_knowledge')
+                    ->hidden(fn(Get $get) => $get('type') !== 'product_knowledge')
                     ->columnSpan(3),
-                Hidden::make('user_id')->dehydrateStateUsing(fn ($state) => Auth::id())
+                Hidden::make('user_id')->dehydrateStateUsing(fn($state) => Auth::id())
             ])->columns(3);
     }
 
@@ -105,7 +105,7 @@ class HomeResource extends Resource
                                 return '--none--';
                         }
                     })
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'Hero' => 'info',
                         'Block' => 'warning',
                         'Product Knowledge' => 'success',

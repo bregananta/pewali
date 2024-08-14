@@ -6,8 +6,10 @@ use App\Http\Controllers\Chat\GetChatsController;
 use App\Http\Controllers\Chat\GetMessagesController;
 use App\Http\Controllers\Chat\PostMessageController;
 use App\Livewire\Blog;
+use App\Livewire\Product;
 use App\Livewire\HomePage;
 use App\Livewire\Page;
+use App\Livewire\Products;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -18,6 +20,8 @@ Route::get('/', HomePage::class);
 
 Route::get('/page/{slug}', Page::class);
 Route::get('/blog/{slug}', Blog::class);
+Route::get('/products', Products::class);
+Route::get('/product/{sku}', Product::class);
 
 Route::prefix('chat')->group(function () {
     Route::view('chat', 'chat::chat');

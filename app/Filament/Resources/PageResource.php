@@ -60,7 +60,6 @@ class PageResource extends Resource
                     ->default(false)
                     ->dehydrated(false),
                 TextInput::make('slug')->label('Slug')->required()->unique(ignoreRecord: true)->columnSpan(2),
-                // RichEditor::make('content')->label('Konten')->required()->columnSpan(3),
                 TinyEditor::make('content')
                     ->fileAttachmentsDisk('public')
                     ->fileAttachmentsVisibility('public')
@@ -69,24 +68,6 @@ class PageResource extends Resource
                     ->columnSpan('full')
                     ->required(),
                 TextInput::make('meta')->label('Meta Data')->required()->columnSpan(3),
-                // Checkbox::make('is_menu')
-                //     ->label('Sebagai Menu')
-                //     ->reactive()
-                //     ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
-                //         if ($get('is_menu') === false) {
-                //             $set('menu_text', null);
-                //             $set('parent_id', null);
-                //         }
-                //     })
-                //     ->columnSpan(3),
-                // Select::make('parent_id')
-                //     ->options(Page::where('is_menu', true)->pluck('title', 'id'))
-                //     ->label('Sub Menu Dari')
-                //     ->columnSpan(1),
-                // TextInput::make('menu_text')
-                //     ->label('Teks Menu')
-                //     ->required(fn (Get $get) => $get('is_menu'))
-                //     ->columnSpan(1),
                 Checkbox::make('is_published')->label('Dipublikasikan')->columnSpan(3),
                 Hidden::make('user_id')->dehydrateStateUsing(fn($state) => Auth::id())
             ])->columns(3);
@@ -103,24 +84,12 @@ class PageResource extends Resource
                 TextColumn::make('content')
                     ->html()
                     ->wrap()
-                    // ->lineClamp(2)
                     ->words(20)
-                    ->getStateUsing(function (Page $record): string {
-                        // return preg_replace('/<img(.*)<\/img>/iUs', '', preg_replace('/<figure(.*)<\/figure>/iUs', '', $record->content));
-                        return preg_replace('/<img[^>]+\>/i', '', $record->content);
-                    }),
-                CheckboxColumn::make('is_published'),
-                // IconColumn::make('is_menu')->boolean(),
+                    ->getStateUsing(fn($record) => strip_tags($record->content)),
                 TextColumn::make('menu_text')
             ])
             ->filters([
                 TrashedFilter::make(),
-                // SelectFilter::make('is_menu')
-                //     ->label('Sebagai Menu')
-                //     ->options([
-                //         true => 'Sebagai Menu',
-                //         false => 'Bukan Sebagai Menu',
-                //     ]),
                 SelectFilter::make('is_published')
                     ->label('Dipublikasikan')
                     ->options([

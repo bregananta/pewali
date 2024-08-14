@@ -15,7 +15,7 @@ class Client extends Model implements HasMedia
     use SoftDeletes;
     use InteractsWithMedia;
 
-    protected $fillable = ['name', 'description', 'url', 'user_id'];
+    protected $fillable = ['name', 'description', 'url', 'is_published', 'user_id'];
 
     public function user(): BelongsTo
     {

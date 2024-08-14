@@ -93,8 +93,14 @@ class ProductResource extends Resource
                 TextColumn::make('name')
                     ->label('Nama')
                     ->wrap()
+                    ->description(fn(Product $record): string => strip_tags($record->sku))
                     ->lineClamp(2),
-                TextColumn::make('description')->label('Deskripsi')->html()->wrap()->lineClamp(2),
+                TextColumn::make('description')
+                    ->label('Deskripsi')
+                    ->html()
+                    ->wrap()
+                    ->words(20)
+                    ->getStateUsing(fn($record) => strip_tags($record->description)),
                 CheckboxColumn::make('is_published')->label('Dipublikasikan'),
                 CheckboxColumn::make('is_featured')->label('Dipromosikan'),
             ])

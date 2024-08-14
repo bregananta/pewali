@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\Resources\ClientResource\RelationManagers;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\Checkbox;
+use Filament\Tables\Columns\CheckboxColumn;
 
 class ClientResource extends Resource
 {
@@ -39,6 +41,7 @@ class ClientResource extends Resource
                     ->disableToolbarButtons(['attachFiles'])
                     ->columnSpan(3),
                 TextInput::make('url')->label('Link (URL)')->required()->minLength(10)->columnSpan(3),
+                Checkbox::make('is_published')->label('Dipublikasikan'),
                 SpatieMediaLibraryFileUpload::make('logo')
                     ->required()
                     ->image()
@@ -46,7 +49,7 @@ class ClientResource extends Resource
                     ->responsiveImages()
                     ->label('Logo')
                     ->columnSpan(3),
-                Hidden::make('user_id')->dehydrateStateUsing(fn ($state) => Auth::id())
+                Hidden::make('user_id')->dehydrateStateUsing(fn($state) => Auth::id())
             ])->columns(3);
     }
 
@@ -57,8 +60,9 @@ class ClientResource extends Resource
                 TextColumn::make('name')
                     ->label('Klien')
                     ->wrap()
-                    ->description(fn (Client $record): string => strip_tags($record->description))
+                    ->description(fn(Client $record): string => strip_tags($record->description))
                     ->lineClamp(2),
+                CheckboxColumn::make('is_published'),
                 SpatieMediaLibraryImageColumn::make('Gambar'),
             ])
             ->filters([

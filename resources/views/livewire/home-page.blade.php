@@ -7,4 +7,6 @@
     <livewire:components.block />
     <livewire:components.product />
     <livewire:components.ceo-remark />
+    <livewire:components.clients />
+    <livewire:components.faq />
 </div>
