@@ -9,7 +9,10 @@ use App\Livewire\Blog;
 use App\Livewire\Product;
 use App\Livewire\HomePage;
 use App\Livewire\Page;
+use App\Livewire\Privasi;
+use App\Livewire\ProductCategory;
 use App\Livewire\Products;
+use App\Livewire\SyaratKetentuan;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -22,6 +25,9 @@ Route::get('/page/{slug}', Page::class);
 Route::get('/blog/{slug}', Blog::class);
 Route::get('/products', Products::class);
 Route::get('/product/{sku}', Product::class);
+Route::get('/product-category/{category_id}', ProductCategory::class);
+Route::get('/privasi', Privasi::class);
+Route::get('/syarat-ketentuan', SyaratKetentuan::class);
 
 Route::prefix('chat')->group(function () {
     Route::view('chat', 'chat::chat');

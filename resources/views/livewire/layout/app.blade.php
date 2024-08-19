@@ -128,18 +128,14 @@
                                     <div class="text-xl font-semibold capitalize">&nbsp;</div>
                                     <ul class="flex flex-col gap-y-[10px] capitalize">
                                         <li>
-                                            <a href="https://www.example.com/" target="_blank" rel="noopener noreferrer"
-                                                class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">Support</a>
+                                            <a href="/privasi"
+                                                class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">Kebijakan
+                                                Privasi</a>
                                         </li>
                                         <li>
-                                            <a href="https://www.example.com/" target="_blank" rel="noopener noreferrer"
-                                                class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">Privacy
-                                                policy</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.example.com/" target="_blank" rel="noopener noreferrer"
-                                                class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">Terms
-                                                & Conditions</a>
+                                            <a href="/syarat-ketentuan"
+                                                class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">Syarat
+                                                &amp; Ketentuan</a>
                                         </li>
                                     </ul>
                                 </div>

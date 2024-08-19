@@ -56,6 +56,29 @@
                                     @endforeach
                                 </ul>
                             </div>
+                        @else
+                            <div class="rounded-[10px] bg-ColorOffWhite p-8">
+                                <div
+                                    class="relative mb-[30px] inline-block pb-[10px] text-lg font-semibold text-ColorBlack after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-black">
+                                    Halaman Terkait
+                                </div>
+                                <!-- Blog Categories List -->
+                                <ul class="text-ColorBlack">
+                                    @foreach ($related_menus as $item)
+                                        @if ($item->page?->id === $page->id)
+                                            <li
+                                                class="border-b border-ColorBlack/10 pb-[14px] pt-[14px] first:pt-0 last:border-b-0 last:pb-0 text-ColorBlue">
+                                                {{ $item->title ?? '' }}</li>
+                                        @else
+                                            <li
+                                                class="border-b border-ColorBlack/10 pb-[14px] pt-[14px] first:pt-0 last:border-b-0 last:pb-0">
+                                                <a class='hover:text-ColorBlue'
+                                                    href='/page/{{ $item->page?->slug }}'>{{ $item->title ?? '' }}</a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </div>
                         @endif
                     </aside>
                 </div>

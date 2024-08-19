@@ -1,7 +1,5 @@
 <div class="flex flex-col gap-y-7 md:col-span-1 lg:col-span-1">
-    <!-- Footer Widget Title -->
     <div class="text-xl font-semibold capitalize">&nbsp;</div>
-    <!-- Footer Navbar -->
     <ul class="flex flex-col gap-y-[10px] capitalize">
         @foreach ($menus as $menu)
             <li>
@@ -25,7 +23,7 @@
                             class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">{{ $menu->title }}
                         </a>
                     @else
-                        <a href="#"
+                        <a href="/page/{{ $menu->children?->first()?->page?->slug }}"
                             class="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">{{ $menu->title }}
                         </a>
                     @endif

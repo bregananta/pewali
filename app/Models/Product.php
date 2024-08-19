@@ -21,4 +21,9 @@ class Product extends Model implements HasMedia
     {
         return $this->belongsTo(User::class);
     }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(ProductCategory::class, 'product_category_id');
+    }
 }

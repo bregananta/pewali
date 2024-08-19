@@ -38,7 +38,8 @@
                     </ul>
 
                     <div class="jos mt-[60px] flex justify-center xl:mt-20">
-                        <a class="btn is-blue is-rounded btn-animation is-large group" href="#"><span>Masih
+                        <a class="btn is-blue is-rounded btn-animation is-large group"
+                            href="/page/kontak-kami"><span>Masih
                                 memiliki pertanyaan? Hubungi Kami</span></a>
                     </div>
                 </div>

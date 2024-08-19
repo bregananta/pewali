@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Page extends Model
@@ -19,7 +20,8 @@ class Page extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function subPage()
+    public function menus(): HasMany
     {
+        return $this->hasMany(Menu::class);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use App\Models\Home;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -41,13 +41,18 @@ class Products extends Component
 
     public function render()
     {
+        $categories = ProductCategory::where('parent_id', -1)->get();
+
         if (is_null($this->sku)) {
             return view('livewire.products')->with([
                 'products' => $this->products,
                 'featured_products' => $this->featured_products,
+                'categories' => $categories,
             ]);
         } else {
-            return view('livewire.product');
+            return view('livewire.product')->with([
+                'categories' => $this->categories,
+            ]);
         }
     }
 }

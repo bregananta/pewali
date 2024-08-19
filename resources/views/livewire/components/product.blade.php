@@ -15,27 +15,27 @@
                 <div class="grid gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]">
                     @foreach ($products as $product)
                         <div class="jos w-1/2" data-jos_delay="0">
-                            <div class="group">
-                                <div
-                                    class="overflow-hidden max-h-[350px] group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
-                                    <img src="{{ $product->getMedia()[0]->getUrl() }}" alt="portfolio-img-1"
-                                        class="max-h-[350px] object-cover transition-all duration-300 ease-in-out group-hover:scale-105" />
-                                </div>
-                                <div class="mt-6">
+                            <a href="/product/{{ $product->sku }}">
+                                <div class="group">
                                     <div
-                                        class="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
-                                        <a class="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorBlue xl:text-2xl"
-                                            href="#">{{ $product->name }}</a>
-
+                                        class="flex overflow-hidden max-h-[350px] group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full items-center justify-center">
+                                        <img src="{{ $product->getMedia()[0]->getUrl() }}" alt="portfolio-img-1"
+                                            class="max-h-[350px] object-cover transition-all duration-300 ease-in-out group-hover:scale-105" />
                                     </div>
-                                    <p>{{ $product->sku }}</p>
-                                    <a class="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue"
+                                    <div class="mt-6">
+                                        <div class="mb-5 flex text-ColorBlack xl:mb-7">
+                                            <a class="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorBlue xl:text-2xl"
+                                                href="/product/{{ $product->sku }}">{{ $product->name }}</a>
+                                        </div>
+                                        <span>{{ $product->sku }}</span>
+                                        {{-- <a class="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue"
                                         href="#">Lihat
                                         <span
                                             class="inline-block transition-all duration-150 group-hover:translate-x-2"><i
-                                                class="fa-solid fa-arrow-right"></i></span></a>
+                                                class="fa-solid fa-arrow-right"></i></span></a> --}}
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Home;
+use App\Models\Menu;
 use App\Models\Page as ModelsPage;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -25,7 +26,6 @@ class Page extends Component
 
     public function render()
     {
-        // dd($this->page->id);
         $home = Home::where('type', 'product_knowledge')
             ->where('page_id', $this->page->id)
             ->get();
@@ -38,11 +38,13 @@ class Page extends Component
                 ->get();
         }
 
-        // dd($is_product_knowledge);
+        $parent_menu = $this->page->menus()->pluck('parent_id');
+        $related_menus = Menu::whereIn('parent_id', $parent_menu)->where('parent_id', '>', 0)->orderBy('parent_id')->get();
 
         return view('livewire.page', [
             'is_product_knowledge' => $is_product_knowledge,
             'product_knowledge' => $product_knowledge,
+            'related_menus' => $related_menus,
         ]);
     }
 }
