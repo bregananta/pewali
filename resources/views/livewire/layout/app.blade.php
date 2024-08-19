@@ -71,7 +71,7 @@
                                     </h2>
                                 </div>
                                 <a class="btn is-blue is-rounded btn-animation is-large group"
-                                    href="#"><span>Let's start the project</span></a>
+                                    href="/page/kontak-kami"><span>Let's start the project</span></a>
                             </div>
                         </div>
                     </div>

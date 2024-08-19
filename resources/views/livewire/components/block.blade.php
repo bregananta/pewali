@@ -38,7 +38,7 @@
 
                                             <div class="jos mt-[60px] flex justify-center xl:mt-20">
                                                 <a class="btn is-blue is-rounded btn-animation is-large group"
-                                                    href="#"><span>Konsultasikan Kebutuhan Anda
+                                                    href="/page/kontak-kami"><span>Konsultasikan Kebutuhan Anda
                                                         Sekarang</span></a>
                                             </div>
                                         </div>
