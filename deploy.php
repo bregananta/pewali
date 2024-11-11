@@ -36,11 +36,14 @@ add('writable_dirs', [
 set('composer_options', '--verbose --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader');
 
 host('Production_Server')
-    ->setHostname('185.151.51.37')
+    // ->setHostname('185.151.51.37')
+    ->setHostname('103.84.206.52')
     ->set('remote_user', 'bregananta')
-    ->set('port', 7822)
+    // ->set('port', 7822)
+    ->set('port', 22)
     ->set('branch', 'main')
-    ->set('deploy_path', '/var/www/pewali-new');
+    // ->set('deploy_path', '/var/www/pewali-new');
+    ->set('deploy_path', '/var/www/pewali.com');
 
 task('deploy:secrets', function () {
     file_put_contents(__DIR__ . '/.env', getenv('DOT_ENV'));
