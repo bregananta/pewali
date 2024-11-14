@@ -61,7 +61,7 @@ task('deploy', [
     'deploy:vendors',
     'deploy:shared',
     'artisan:storage:link',
-    'artisan:queue:restart',
+    // 'artisan:queue:restart',
     'deploy:publish',
     'deploy:unlock',
 ]);
